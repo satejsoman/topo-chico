@@ -30,7 +30,7 @@ x = np.linspace(-5, 5, 5000)
 plt.plot(x, W(x), linewidth = 0.5)
 plt.gca().set_aspect('equal')
 plt.gca().set(title = f"Weierstrass function ($a$ = {a0}, $b$ = {b0})")
-plt.savefig("weierstrass.png", dpi = 300)
+plt.savefig("wfigs/eierstrass.png", dpi = 300)
 plt.show()
 
 # UAR 
@@ -50,7 +50,7 @@ plt.fill_between(x, Wp_uar - vp_uar, Wp_uar + vp_uar, alpha = 0.3, color = orang
 plt.plot(x_uar, np.zeros(25), '.', markersize = 5, color = orange)
 plt.gca().set_aspect('equal')
 plt.gca().set(title = f"UAR, 25 points (MSE = {mse_uar.round(2)})")
-plt.savefig("uar.png", dpi = 300)
+plt.savefig("ufigs/ar.png", dpi = 300)
 plt.show()
 
 # adaptive sampling
@@ -74,7 +74,7 @@ plt.fill_between(x, Wp_grid - vp_grid, Wp_grid + vp_grid, alpha = 0.3, color = o
 plt.plot(x_loss, np.zeros((i+1)*5), '.', markersize = 5, color = orange)
 plt.gca().set_aspect('equal')
 plt.gca().set(title = f"loss-adaptive, {(i+1)*5} points (MSE = {mse_loss.round(2)})")
-plt.savefig(f"loss-adaptive-step{i}.png", dpi = 300)
+plt.savefig(f"figs/loss-adaptive-step{i}.png", dpi = 300)
 plt.show()
 
 for i in range(1, 5):
@@ -93,7 +93,7 @@ for i in range(1, 5):
     plt.plot(x_loss, np.zeros((i+1)*5), '.', markersize = 5, color = orange)
     plt.gca().set_aspect('equal')
     plt.gca().set(title = f"loss-adaptive, {(i+1)*5} points (MSE = {mse_loss.round(2)})")
-    plt.savefig(f"loss-adaptive-step{i}.png", dpi = 300)
+    plt.savefig(f"figs/loss-adaptive-step{i}.png", dpi = 300)
     plt.show()
 
 ## uncertainty based
@@ -114,7 +114,7 @@ plt.fill_between(x, Wp_grid - vp_grid, Wp_grid + vp_grid, alpha = 0.3, color = o
 plt.plot(x_uncertainty, np.zeros((i+1)*5), '.', markersize = 5, color = orange)
 plt.gca().set_aspect('equal')
 plt.gca().set(title = f"uncertainty-adaptive, {(i+1)*5} points (MSE = {mse_uncertainty.round(2)})")
-plt.savefig(f"uncertainty-adaptive-step{i}.png", dpi = 300)
+plt.savefig(f"figs/uncertainty-adaptive-step{i}.png", dpi = 300)
 plt.show()
 
 for i in range(1, 5):
@@ -133,5 +133,5 @@ for i in range(1, 5):
     plt.plot(x_uncertainty, np.zeros((i+1)*5), '.', markersize = 5, color = orange)
     plt.gca().set_aspect('equal')
     plt.gca().set(title = f"uncertainty-adaptive, {(i+1)*5} points (MSE = {mse_uncertainty.round(2)})")
-    plt.savefig(f"uncertainty-adaptive-step{i}.png", dpi = 300)
+    plt.savefig(f"figs/uncertainty-adaptive-step{i}.png", dpi = 300)
     plt.show()
